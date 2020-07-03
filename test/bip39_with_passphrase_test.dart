@@ -10,12 +10,10 @@ void main() {
       File('./test/vectors_with_passphrase.json')
           .readAsStringSync(encoding: utf8));
 
-  group('Validate seed with passphrase', () {
-    int i = 0;
-    (vectors['english'] as List<dynamic>).forEach((list) {
-      testVector(list, i);
-      i++;
-    });
+  int i = 0;
+  (vectors['english'] as List<dynamic>).forEach((list) {
+    testVector(list, i);
+    i++;
   });
 }
 
