@@ -18,27 +18,27 @@ However, there should be other checks in place, such as checking to make sure th
 ## Examples
 ``` dart
 // Generate a random mnemonic (uses crypto.randomBytes under the hood), defaults to 128-bits of entropy
-
-Bip39 randomMnemonic = Bip39().generateMnemonic();
-randomMnemonic.getMnemonic();
-//=> get BIP39 Mnemonic word list
-randomMnemonic.toSeed()
-//=>[121, 234, 49, 122, 169, 92, 108, 194, 93, 235, 146, 128, 182, 183, 214, 124, 113...
-randomMnemonic.toSeedHEX()
-//=> 79ea317aa95c6cc25deb9280b6b7d67c713a9a738c06782652d36acbe01b70b788ff7f2...
-randomMnemonic.getEntropy()
-//=> d12073d0ade186328c4b948b1a8309e4...
+    Bip39 randomMnemonic = Bip39().generateMnemonic();
+    randomMnemonic.getMnemonic();
+    //=> get BIP39 Mnemonic word list
+    randomMnemonic.toSeed()
+    //=>[121, 234, 49, 122, 169, 92, 108, 194, 93, 235, 146, 128, 182, 183, 214, 124, 113...
+    randomMnemonic.toSeedHEX()
+    //=> 79ea317aa95c6cc25deb9280b6b7d67c713a9a738c06782652d36acbe01b70b788ff7f2...
+    randomMnemonic.getEntropy()
+    //=> d12073d0ade186328c4b948b1a8309e4...
 
 Bip39 provideMnemonic = Bip39(mnemonic:"unknown obvious unfold dutch shell state brisk benefit must rubber labor person");
 
 print(provideMnemonic.toSeed())
 //=>Uint8List [41, 232, 68, 203, 75, 142, 239, 212, 141, 229, 194, 129, 127....
+
 ``` 
+
 ```dart
 main() {
-    // Only support BIP39 English word list
-    // uses HEX strings for entropy
-     Bip39 randomMnemonic = Bip39().generateMnemonic();
+
+  Bip39 randomMnemonic = Bip39().generateMnemonic();
   print("Seed Mnemonic: ${randomMnemonic.getMnemonic()}");
   print("Seed : ${randomMnemonic.toSeed()}");
   print("Seed HEX: ${randomMnemonic.toSeedHEX()}");
